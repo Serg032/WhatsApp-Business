@@ -280,21 +280,21 @@ Datos a tener en cuenta:
 
     - WHATSAPP_BUSINESS_ACCOUNT_ID. Este valor lo podemos encontrar en el [panel de aplicaciones de Meta](https://developers.facebook.com/apps/)
 
-    ![imagen de identificador de Cuenta Business](/src/assets/identificador-cuenta.png)
+    ![imagen de identificador de Cuenta Business](https://zasjyqumfvammbngciet.supabase.co/storage/v1/object/public/whatsapp-bussines/identificador-cuenta.png)
 
   - Relacionadas con el envio de mensajes a clientes:
 
     - TEMPORAL_TOKEN: Este es un token que en las aplicaciones de prueba al no tener la empresa verificada expira cada 23 horas, por lo que tendra que ser updateado cada dia mientras desarrollamos. Lo encontramos en el [panel de aplicaciones de Meta](https://developers.facebook.com/apps/)
 
-    ![imagen de Token de verificacion](/src/assets/verification-token.png)
+    ![imagen de Token de verificacion](https://zasjyqumfvammbngciet.supabase.co/storage/v1/object/public/whatsapp-bussines/verification-token.png)
 
     - PHONE_NUMBER_ID: [panel de aplicaciones de Meta](https://developers.facebook.com/apps/)
 
-    ![imagen de id de numero de telefono](/src/assets/phone-indentifier.png)
+    ![imagen de id de numero de telefono](https://zasjyqumfvammbngciet.supabase.co/storage/v1/object/public/whatsapp-bussines/phone-indentifier.png)
 
     - DESTINATION_NUMBER: [panel de aplicaciones de Meta](https://developers.facebook.com/apps/)
 
-    ![numero de destino](/src/assets/Captura%20de%20pantalla%202024-02-06%20095100.png)
+    ![numero de destino](https://zasjyqumfvammbngciet.supabase.co/storage/v1/object/public/whatsapp-bussines/Captura%20de%20pantalla%202024-02-06%20095100.png)
 
 
 
