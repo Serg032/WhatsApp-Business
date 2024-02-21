@@ -80,7 +80,7 @@ export class WhatsappService {
           name,
           category,
           allow_category_change: true,
-          language: "es-ES",
+          language: "es",
           components: buildTemplatesComponents(
             isHeader,
             isBody,
