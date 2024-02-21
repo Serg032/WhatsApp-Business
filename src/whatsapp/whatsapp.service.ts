@@ -96,4 +96,16 @@ export class WhatsappService {
       throw error;
     }
   }
+
+  public async getTemplates() {
+    try {
+      const response = await fetch(this.createTemplateUrl, {
+        method: "GET",
+        headers: this.headers,
+      });
+      return await response.json();
+    } catch (error) {
+      throw error;
+    }
+  }
 }

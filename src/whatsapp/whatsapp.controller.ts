@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from "@nestjs/common";
+import { Body, Controller, Get, Post } from "@nestjs/common";
 import { TemplateCategory, WhatsappService } from "./whatsapp.service";
 
 @Controller("whatsapp")
@@ -43,5 +43,10 @@ export class WhatsappController {
       bodyText,
       footerText,
     );
+  }
+
+  @Get()
+  async getTemplate(): Promise<any> {
+    return await this.service.getTemplates();
   }
 }
