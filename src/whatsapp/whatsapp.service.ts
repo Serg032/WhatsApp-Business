@@ -1,7 +1,8 @@
 import "dotenv/config";
 import { Injectable } from "@nestjs/common";
+import { buildTemplatesComponents } from "src/helpers/build-template-components";
 
-enum TemplateCategory {
+export enum TemplateCategory {
   AUTHENTICATION,
   MARKETING,
   UTILITY,
@@ -64,7 +65,12 @@ export class WhatsappService {
   public async createTemplate(
     name: string,
     category: TemplateCategory,
-    message: string,
+    isHeader: boolean,
+    isBody: boolean,
+    isFooter: boolean,
+    headerText?: string,
+    bodyText?: string,
+    footerText?: string,
   ) {
     try {
       const response = await fetch(this.createTemplateUrl, {
@@ -74,10 +80,15 @@ export class WhatsappService {
           name,
           category,
           allow_category_change: true,
-          language: 'es-ES',
-          components: {
-            
-          }
+          language: "es-ES",
+          components: buildTemplatesComponents(
+            isHeader,
+            isBody,
+            isFooter,
+            headerText,
+            bodyText,
+            footerText,
+          ).components,
         }),
       });
       return await response.json();
