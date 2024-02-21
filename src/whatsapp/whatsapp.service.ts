@@ -10,7 +10,7 @@ export enum TemplateCategory {
 
 @Injectable()
 export class WhatsappService {
-  private rootUrl = `https://graph.facebook.com/v18.0/${process.env.PHONE_NUMBER_ID}/messages`;
+  private sendMessageUrl = `https://graph.facebook.com/v18.0/${process.env.PHONE_NUMBER_ID}/messages`;
   private createTemplateUrl = `https://graph.facebook.com/v19.0/${process.env.WHATSAPP_BUSINESS_ACCOUNT_ID}/message_templates`;
   private destinationNumber = process.env.DESTINATION_NUMBER;
   private headers = {
@@ -20,7 +20,7 @@ export class WhatsappService {
 
   public async sendMessage() {
     try {
-      const response = await fetch(this.rootUrl, {
+      const response = await fetch(this.sendMessageUrl, {
         method: "POST",
         headers: this.headers,
         body: JSON.stringify({
@@ -43,7 +43,7 @@ export class WhatsappService {
 
   public async sendCustomMessage(message: string) {
     try {
-      const response = await fetch(this.rootUrl, {
+      const response = await fetch(this.sendMessageUrl, {
         method: "POST",
         headers: this.headers,
         body: JSON.stringify({
@@ -102,6 +102,30 @@ export class WhatsappService {
       const response = await fetch(this.createTemplateUrl, {
         method: "GET",
         headers: this.headers,
+      });
+      return await response.json();
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  public async sendTemplate() {
+    try {
+      const response = await fetch(this.sendMessageUrl, {
+        method: "POST",
+        headers: this.headers,
+        body: JSON.stringify({
+          messaging_product: "whatsapp",
+          recipient_type: "individual",
+          to: this.destinationNumber,
+          type: "template",
+          template: {
+            name: "testeando_la_api",
+            language: {
+              code: "es",
+            },
+          },
+        }),
       });
       return await response.json();
     } catch (error) {

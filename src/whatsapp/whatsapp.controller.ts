@@ -49,4 +49,9 @@ export class WhatsappController {
   async getTemplate(): Promise<any> {
     return await this.service.getTemplates();
   }
+
+  @Post("send-template")
+  async sendTemplate() {
+    return await this.service.sendTemplate();
+  }
 }
